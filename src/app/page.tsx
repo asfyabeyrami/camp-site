@@ -1,95 +1,50 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import BannerSlider from "@/components/BannerSlider";
+import CategorySlider from "@/components/CategorySlider";
+import Footer from "@/components/Footer";
+import SaleProductsSlider from "@/components/SaleProductsSlider";
+import TriplePromoBanners from "@/components/TriplePromoBanners";
 
-export default function Home() {
+import HomeHeader from "@/components/header/HomeHeader";
+import { getCategories } from "@/helpers/category";
+import { getSaleProducts } from "@/helpers/product";
+
+export default async function Home() {
+  const [categories, saleProducts] = await Promise.all([
+    getCategories(),
+    getSaleProducts(),
+  ]);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen flex flex-col">
+      <HomeHeader />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+      <main className="flex-grow w-full mx-auto flex flex-col items-center">
+        <BannerSlider />
+
+        {/* اسلایدر دسته‌بندی */}
+        {categories.length > 0 && <CategorySlider categories={categories} />}
+        <section className="relative w-full rounded-md border border-gray-200 py-6 max-w-7xl mx-auto">
+          <div className="rounded-3xl py-8 px-6 flex flex-col items-center text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black mb-2 drop-shadow-lg">
+              <p>فروشگاه</p>
+              <p className="text-rose-600 py-6">کوه نگار</p>
+            </h1>
+            <p className="text-md sm:text-lg md:text-xl text-black/90 font-medium leading-relaxed">
+              ارائه‌دهنده بهترین و متنوع‌ترین ..............
+            </p>
+          </div>
+        </section>
+
+        {/* محصولات ویژه */}
+        {saleProducts.length > 0 && (
+          <>
+            <SaleProductsSlider title="پیشنهاد ویژه" products={saleProducts} />
+            <TriplePromoBanners />
+          </>
+        )}
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <Footer />
     </div>
   );
 }
