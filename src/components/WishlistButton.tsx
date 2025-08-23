@@ -34,7 +34,7 @@
 //     setLoading(true);
 
 //     try {
-//       const resp = await fetch(`https://api.pooladmotor.com/wish/addWish`, {
+//       const resp = await fetch(`https://api.koohnegar.com/wish/addWish`, {
 //         method: "POST",
 //         headers: {
 //           accept: "*/*",

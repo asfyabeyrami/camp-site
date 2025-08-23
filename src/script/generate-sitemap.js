@@ -54,7 +54,7 @@ function buildSitemapIndex(sitemaps) {
   try {
     // محصولات
     const productsRes = await fetch(
-      "https://api.pooladmotor.com/product/sort?take=5000"
+      "https://api.koohnegar.com/product/sort?take=5000"
     );
     if (!productsRes.ok) throw new Error("Failed to fetch products");
     const productsData = await productsRes.json();
@@ -69,7 +69,7 @@ function buildSitemapIndex(sitemaps) {
     }
 
     // دسته‌بندی‌ها
-    const categoriesRes = await fetch("https://api.pooladmotor.com/category");
+    const categoriesRes = await fetch("https://api.koohnegar.com/category");
     if (!categoriesRes.ok) throw new Error("Failed to fetch categories");
     const categoriesData = await categoriesRes.json();
     const allCategories = flattenCategories(categoriesData.data);
@@ -84,7 +84,7 @@ function buildSitemapIndex(sitemaps) {
     }
 
     // تگ‌ها
-    const tagsRes = await fetch("https://api.pooladmotor.com/tag");
+    const tagsRes = await fetch("https://api.koohnegar.com/tag");
     if (!tagsRes.ok) throw new Error("Failed to fetch tags");
     const tagsData = await tagsRes.json();
     let tags = [];

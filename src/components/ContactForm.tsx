@@ -38,7 +38,7 @@ export default function ContactForm() {
       return;
     }
     try {
-      const res = await fetch("https://api..com/ticket/create", {
+      const res = await fetch("https://api.koohnegar.com/ticket/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

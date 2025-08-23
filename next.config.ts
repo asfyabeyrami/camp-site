@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "api.pooladmotor.com",
+        hostname: "api.koohnegar.com",
         port: "",
         pathname: "/media/**",
       },

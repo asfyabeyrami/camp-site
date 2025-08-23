@@ -17,7 +17,7 @@ type Banner = {
 const banners: Banner[] = [
   {
     id: "1",
-    url: "https://api.pooladmotor.com/media/52c4b247-c674-47cb-b2df-9d4edb4bfeb8.jpg",
+    url: "https://api.koohnegar.com/media/52c4b247-c674-47cb-b2df-9d4edb4bfeb8.jpg",
     alt: "بنر۱",
     title: "بنر۱",
     buttonText: "مشاهده",
@@ -25,7 +25,7 @@ const banners: Banner[] = [
   },
   {
     id: "2",
-    url: "https://api.pooladmotor.com/media/783bc83b-d653-45ba-b366-9de09da0fdda.jpg",
+    url: "https://api.koohnegar.com/media/783bc83b-d653-45ba-b366-9de09da0fdda.jpg",
     alt: "بنر۲",
     title: "جدید ترین",
     buttonText: "خرید",
@@ -33,7 +33,7 @@ const banners: Banner[] = [
   },
   {
     id: "3",
-    url: "https://api.pooladmotor.com/media/c945877f-baa0-432d-a649-be56b80d4c40.jpg",
+    url: "https://api.koohnegar.com/media/c945877f-baa0-432d-a649-be56b80d4c40.jpg",
     alt: "/ex",
   },
 ];
