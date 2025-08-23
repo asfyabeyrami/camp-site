@@ -99,7 +99,7 @@ export default function MobileDrawer({
     : "/auth?redirect=/orders";
   const menuItems = [
     { title: "پیگیری سفارشات", href: orderTrackingHref },
-    { title: "حساب کاربری", href: "#" },
+    { title: "حساب کاربری", href: "/profile" },
     { title: "درباره ما", href: "#" },
     { title: "تماس با ما", href: "#" },
   ];
