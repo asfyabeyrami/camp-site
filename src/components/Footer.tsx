@@ -107,31 +107,22 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-gray-600 text-base">
               <li>
-                <Link
-                  href="/profile"
-                  className="hover:text-rose-600 transition"
-                >
+                <Link href="#" className="hover:text-rose-600 transition">
                   حساب کاربری
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about-us"
-                  className="hover:text-rose-600 transition"
-                >
+                <Link href="#" className="hover:text-rose-600 transition">
                   درباره ما
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/contact-us"
-                  className="hover:text-rose-600 transition"
-                >
+                <Link href="#" className="hover:text-rose-600 transition">
                   تماس با ما
                 </Link>
               </li>
               <li>
-                <Link href="/news" className="hover:text-rose-600 transition">
+                <Link href="#" className="hover:text-rose-600 transition">
                   جدید ترین ها
                 </Link>
               </li>

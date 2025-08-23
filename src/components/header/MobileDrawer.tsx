@@ -99,9 +99,9 @@ export default function MobileDrawer({
     : "/auth?redirect=/orders";
   const menuItems = [
     { title: "پیگیری سفارشات", href: orderTrackingHref },
-    { title: "حساب کاربری", href: "/profile" },
-    { title: "درباره ما", href: "/about-us" },
-    { title: "تماس با ما", href: "/contact-us" },
+    { title: "حساب کاربری", href: "#" },
+    { title: "درباره ما", href: "#" },
+    { title: "تماس با ما", href: "#" },
   ];
 
   /* ------------------- رندر هر لِیول از دسته‌بندی ------------------- */
