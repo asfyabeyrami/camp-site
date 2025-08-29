@@ -29,7 +29,7 @@ function buildProductSchema(
     sku: product.code,
     brand: {
       "@type": "Brand",
-      name: "پولاد موتور",
+      name: "کوه نگار",
     },
     offers: {
       "@type": "Offer",
@@ -314,7 +314,7 @@ export default async function Page({
           position: i + 2,
           name: stringVal(item.title),
           item: `https://pooladmotor.com/${encodeURIComponent(
-            stringVal(item.title)
+            stringVal(item.slug)
           )}`,
         })),
       ],
@@ -362,7 +362,7 @@ export default async function Page({
                 idx !== path.length - 1 ? (
                   <span key={cat.id} className="flex items-center">
                     <Link
-                      href={`/${encodeURIComponent(stringVal(cat.title))}`}
+                      href={`/${encodeURIComponent(stringVal(cat.slug))}`}
                       className="hover:text-rose-500 transition"
                     >
                       {stringVal(cat.title)}
@@ -608,10 +608,9 @@ export default async function Page({
                   {/* فروشنده و نمادها */}
                   <div className="rounded-xl bg-gray-50 border border-gray-100 py-3 px-4 flex flex-col gap-2">
                     <div className="flex gap-2 items-center justify-between text-sm font-bold text-gray-700">
-                      <span>پولاد موتور</span>
+                      <span>کوه نگار</span>
                     </div>
                     <div className="flex gap-2 items-center justify-between text-sm text-gray-500 pt-2 mb-4 border-t border-gray-100">
-                      <span>موجود در انبار پولاد موتور (ارسال فوری)</span>
                       <svg
                         className="w-5 h-5 text-green-500"
                         viewBox="0 0 20 20"
@@ -623,17 +622,6 @@ export default async function Page({
                     <div className="flex gap-2 items-center justify-between mb-4 text-sm text-gray-500">
                       <span>ارزیابی عملکرد:</span>
                       <span>عالی</span>
-                    </div>
-                    <div className="flex gap-2 items-center justify-between text-sm text-gray-500">
-                      <span>۱۸ ماه گارانتی شرکتی</span>
-                      <svg
-                        className="w-5 h-5 text-sky-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                      </svg>
                     </div>
                   </div>
                   {/* قیمت و تخفیف */}
@@ -725,12 +713,11 @@ export default async function Page({
                 <div className="sticky top-28 z-10">
                   <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow flex flex-col gap-7">
                     {/* فروشنده و نمادها */}
-                    <div className="rounded-xl bg-gray-50 border border-gray-100 py-3 px-4 flex flex-col gap-2 mb-4">
+                    <div className="rounded-xl bg-gray-50 border border-gray-100 py-3 px-4 flex flex-col gap-2">
                       <div className="flex gap-2 items-center justify-between text-sm font-bold text-gray-700">
-                        <span>پولاد موتور</span>
+                        <span>کوه نگار</span>
                       </div>
                       <div className="flex gap-2 items-center justify-between text-sm text-gray-500 pt-2 mb-4 border-t border-gray-100">
-                        <span>موجود در انبار پولاد موتور (ارسال فوری)</span>
                         <svg
                           className="w-5 h-5 text-green-500"
                           viewBox="0 0 20 20"
@@ -742,17 +729,6 @@ export default async function Page({
                       <div className="flex gap-2 items-center justify-between mb-4 text-sm text-gray-500">
                         <span>ارزیابی عملکرد:</span>
                         <span>عالی</span>
-                      </div>
-                      <div className="flex gap-2 items-center justify-between text-sm text-gray-500">
-                        <span>۱۸ ماه گارانتی شرکتی</span>
-                        <svg
-                          className="w-5 h-5 text-sky-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                        </svg>
                       </div>
                     </div>
                     {/* قیمت و تخفیف و دکمه */}

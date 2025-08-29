@@ -60,7 +60,7 @@ export default function AuthForm() {
           <div className="md:hidden mb-10 flex justify-center">
             <Image
               src={logo}
-              alt="لوگوی پولاد موتور"
+              alt="لوگوی کوه نگار"
               width={180}
               height={180}
               className="w-40 h-auto"
