@@ -12,6 +12,7 @@ import type {
   ProductListResponse,
 } from "@/types/type";
 import { CommentSection } from "@/components/comments/CommentSection";
+import { notFound } from "next/navigation";
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 function buildProductSchema(
@@ -791,15 +792,5 @@ export default async function Page({
     );
   }
 
-  return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <Header />
-      <main className="flex-grow flex flex-col items-center justify-center">
-        <div className="max-w-2xl m-auto py-20 text-center text-2xl text-gray-400">
-          صفحه مورد نظر یافت نشد!
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+  notFound();
 }

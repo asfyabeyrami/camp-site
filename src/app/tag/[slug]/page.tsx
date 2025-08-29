@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/header/Header";
 import { Product } from "@/types/type";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 // ====== Helper
 function stringVal(
@@ -155,17 +156,7 @@ export default async function TagPage({
 
   // تگ پیدا نشد
   if (!tag) {
-    return (
-      <div className="min-h-screen flex flex-col bg-gray-50">
-        <Header />
-        <main className="flex-grow flex flex-col items-center justify-center">
-          <div className="max-w-2xl m-auto py-20 text-center text-2xl text-gray-400">
-            تگ مورد نظر یافت نشد!
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
+    notFound();
   }
 
   // محصولات اولیه مربوط به این تگ
