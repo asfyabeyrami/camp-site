@@ -292,9 +292,6 @@ export default async function Page({
 
   // اول بررسی کن دسته هست؟
   const category = await getCategory(slug);
-  if (!category || !category.title || Object.keys(category).length === 0) {
-    notFound();
-  }
 
   if (category) {
     const nestedCategories = await getAllCategories();
@@ -432,9 +429,6 @@ export default async function Page({
   // اگر دسته نبود: حالا محصول رو بگیر!
   const product = await getProductBySlug(slug);
 
-  if (!product || !product.name || Object.keys(product).length === 0) {
-    notFound();
-  }
   if (product) {
     const off = Number(product.off) || 0;
     const price = Number(product.price) || 0;
@@ -798,4 +792,5 @@ export default async function Page({
       </div>
     );
   }
+  notFound();
 }
