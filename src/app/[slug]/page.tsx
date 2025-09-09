@@ -97,7 +97,6 @@ async function getCategory(slug: string): Promise<CategoryRes | null> {
   const res = await fetch(`${NEXT_PUBLIC_BASE_URL}/category/slug/${slug}`, {
     next: { revalidate: 60 },
   });
-  console.log("getCategory =======>", slug, res.status, res.ok);
 
   if (!res.ok) return null;
   const { data } = await res.json();
@@ -293,7 +292,6 @@ export default async function Page({
 
   // اول بررسی کن دسته هست؟
   const category = await getCategory(slug);
-  console.log({ category });
   if (!category || !category.title || Object.keys(category).length === 0) {
     notFound();
   }
