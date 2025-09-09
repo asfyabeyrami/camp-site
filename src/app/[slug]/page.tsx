@@ -291,6 +291,9 @@ export default async function Page({
 
   // اول بررسی کن دسته هست؟
   const category = await getCategory(slug);
+  if (!category) {
+    notFound();
+  }
 
   if (category) {
     const nestedCategories = await getAllCategories();
@@ -427,6 +430,10 @@ export default async function Page({
 
   // اگر دسته نبود: حالا محصول رو بگیر!
   const product = await getProductBySlug(slug);
+
+  if (!product) {
+    notFound();
+  }
 
   if (product) {
     const off = Number(product.off) || 0;
@@ -791,6 +798,4 @@ export default async function Page({
       </div>
     );
   }
-
-  notFound();
 }
