@@ -25,7 +25,7 @@ const banners: Banner[] = [
   },
   {
     id: "2",
-    url: "https://api.koohnegar.com/media/783bc83b-d653-45ba-b366-9de09da0fdda.jpg",
+    url: "https://www.api.koohnegar.com/media/783bc83b-d653-45ba-b366-9de09da0fdda.jpg",
     alt: "بنر۲",
     title: "جدید ترین",
     buttonText: "خرید",

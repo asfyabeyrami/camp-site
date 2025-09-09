@@ -14,11 +14,11 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className="text-slate-800 antialiased">
         {children}
-        {/* <Script
+        <script
           src="https://analytics.ahrefs.com/analytics.js"
-          data-key="PkHQf/4BXF8Qe0k4AoF7hQ"
-          strategy="afterInteractive"
-        /> */}
+          data-key="lo0s8OThTxZlZXhPc+IWSw"
+          async
+        ></script>
       </body>
     </html>
   );
