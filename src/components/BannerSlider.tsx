@@ -17,7 +17,7 @@ type Banner = {
 const banners: Banner[] = [
   {
     id: "1",
-    url: "https://api.koohnegar.com/media/52c4b247-c674-47cb-b2df-9d4edb4bfeb8.jpg",
+    url: "https://www.api.koohnegar.com/media/7fb55a9e-65c5-4bcb-8d6b-1c9fd0706784.webp",
     alt: "بنر۱",
     title: "بنر۱",
     buttonText: "مشاهده",
@@ -33,7 +33,7 @@ const banners: Banner[] = [
   },
   {
     id: "3",
-    url: "https://api.koohnegar.com/media/c945877f-baa0-432d-a649-be56b80d4c40.jpg",
+    url: "https://www.api.koohnegar.com/media/f9cbc9e5-609c-42d2-a4c0-663dc8db6fc6.webp",
     alt: "/ex",
   },
 ];
