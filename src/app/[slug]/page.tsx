@@ -97,6 +97,8 @@ async function getCategory(slug: string): Promise<CategoryRes | null> {
   const res = await fetch(`${NEXT_PUBLIC_BASE_URL}/category/slug/${slug}`, {
     next: { revalidate: 60 },
   });
+  console.log("getCategory =======>", slug, res.status, res.ok);
+
   if (!res.ok) return null;
   const { data } = await res.json();
   return data as CategoryRes;
