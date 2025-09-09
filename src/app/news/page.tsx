@@ -42,7 +42,7 @@ export default async function NewsPage() {
         <div className="w-full max-w-[1700px] mx-auto">
           <section className="mb-6 px-4">
             <h1 className="font-extrabold text-2xl md:text-3xl mb-3 text-rose-600">
-              جدیدترین قطعات سایت
+              جدیدترین ها
             </h1>
           </section>
           <ProductGridWithFilters
