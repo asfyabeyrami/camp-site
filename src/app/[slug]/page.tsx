@@ -291,6 +291,7 @@ export default async function Page({
 
   // اول بررسی کن دسته هست؟
   const category = await getCategory(slug);
+  console.log({ category });
   if (!category || !category.title || Object.keys(category).length === 0) {
     notFound();
   }
