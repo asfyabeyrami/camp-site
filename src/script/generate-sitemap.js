@@ -3,7 +3,7 @@ import path from "path";
 import { create } from "xmlbuilder2";
 // اگر node نسخه >=18 داری:
 const fetch = globalThis.fetch ?? (await import("node-fetch")).default;
-const siteUrl = "https://pooladmotor.com";
+const siteUrl = "https://koohnegar.com";
 const outDir = path.join(process.cwd(), "public");
 const PAGE_SIZE = 200;
 
