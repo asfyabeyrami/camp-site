@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import type { CategoryRes, Product } from "@/types/type";
 import { notFound } from "next/navigation";
-import ProductFeatureTable from "@/components/product/ProductFeatureTable";
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 function buildCategorySchema(category: CategoryRes, products: Product[]) {
