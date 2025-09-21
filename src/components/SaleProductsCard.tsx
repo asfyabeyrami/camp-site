@@ -20,7 +20,7 @@ export function SaleProductCard({ product }: { product: Product }) {
     >
       <div className="w-full mb-3" />
       <Link
-        href={`/${encodeURIComponent(product.slug)}`}
+        href={`/product/${encodeURIComponent(product.slug)}`}
         className="w-full flex flex-col items-center"
       >
         <Image

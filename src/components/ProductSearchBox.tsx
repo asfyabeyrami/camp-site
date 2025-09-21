@@ -89,7 +89,7 @@ export default function ProductSearchBox() {
               onMouseDown={() => {
                 setSearch("");
                 setResults([]);
-                router.push(`/${item.slug}`);
+                router.push(`product/${item.slug}`);
               }}
               className="px-4 py-2 hover:bg-rose-50 text-right cursor-pointer truncate"
             >

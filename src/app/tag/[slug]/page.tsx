@@ -74,7 +74,8 @@ export async function generateMetadata({
     stringVal(tag.ogDescription) ||
     stringVal(tag.description) ||
     "";
-  const canonicalUrl = stringVal(tag.canonicalUrl) || `/tag/${slug}`;
+  const canonicalUrl =
+    stringVal(tag.canonicalUrl) || `https://koohnegar.com/tag/${slug}`;
   const keywords = stringVal(tag.metaKeywords) || "";
   return {
     title: metaTitle,

@@ -252,7 +252,7 @@ export default function OrdersPage() {
                             </div>
                             <div className="flex-1 flex flex-col gap-1 min-w-0">
                               <Link
-                                href={`/${encodeURIComponent(
+                                href={`/product/${encodeURIComponent(
                                   item.product.slug
                                 )}`}
                                 className="font-bold text-sm text-blue-700 hover:underline truncate max-w-full"

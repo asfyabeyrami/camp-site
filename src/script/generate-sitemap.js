@@ -61,7 +61,7 @@ function buildSitemapIndex(sitemaps) {
     let products = [];
     if (productsData?.data?.length) {
       products = productsData.data.map((product) => ({
-        loc: `/${encodeURIComponent(product.slug)}`,
+        loc: `/product/${encodeURIComponent(product.slug)}`,
         lastmod: new Date(product.updatedAt || Date.now()).toISOString(),
         priority: 0.7,
         changefreq: "daily",

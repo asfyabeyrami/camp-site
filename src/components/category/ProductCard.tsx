@@ -74,7 +74,7 @@ export default function ProductCard({ product }: { product: Product }) {
       `}
     >
       <Link
-        href={`/${product.slug}`}
+        href={`/product/${product.slug}`}
         className="
           block w-full aspect-square bg-gray-50 rounded-2xl
           overflow-hidden relative group
@@ -115,7 +115,10 @@ export default function ProductCard({ product }: { product: Product }) {
             maxHeight: "44px",
           }}
         >
-          <Link href={`/${product.slug}`} className="hover:text-rose-600">
+          <Link
+            href={`/product/${product.slug}`}
+            className="hover:text-rose-600"
+          >
             {name}
           </Link>
         </h3>

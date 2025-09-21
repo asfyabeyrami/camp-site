@@ -58,7 +58,7 @@ export default function ProductCardHome({ product }: { product: Product }) {
       itemType="https://schema.org/Product"
     >
       <Link
-        href={`/${product.slug}`}
+        href={`/product/${product.slug}`}
         className="
           block w-full aspect-square bg-gray-50 rounded-2xl
           overflow-hidden relative group
@@ -94,7 +94,7 @@ export default function ProductCardHome({ product }: { product: Product }) {
         {/* نام محصول باید مستقیم (نه به صورت لینک) و فقط متن با itemProp="name" باشد */}
         <h3 className="font-bold text-base mb-1 leading-6 w-full">
           <Link
-            href={`/${product.slug}`}
+            href={`/product/${product.slug}`}
             className="hover:text-rose-600"
             itemProp="name"
           >
