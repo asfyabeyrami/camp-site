@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import type { CategoryRes, Product } from "@/types/type";
 import { notFound } from "next/navigation";
+import ProductFeatureTable from "@/components/product/ProductFeatureTable";
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 function buildCategorySchema(category: CategoryRes, products: Product[]) {
@@ -51,6 +52,7 @@ async function getCategory(slug: string): Promise<CategoryRes | null> {
   const res = await fetch(`${NEXT_PUBLIC_BASE_URL}/category/slug/${slug}`, {
     next: { revalidate: 60 },
   });
+
   if (!res.ok) return null;
   const { data } = await res.json();
   return data as CategoryRes;

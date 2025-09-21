@@ -7,6 +7,7 @@ import ProductCard from "@/components/category/ProductCard";
 import { CommentSection } from "@/components/comments/CommentSection";
 import type { Media, Product, ProductListResponse } from "@/types/type";
 import { notFound } from "next/navigation";
+import ProductFeatureTable from "@/components/product/ProductFeatureTable";
 const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 function buildProductSchema(
@@ -164,6 +165,7 @@ export default async function Page({
 }) {
   const { slug } = await params;
 
+  // اگر دسته نبود: حالا محصول رو بگیر!
   const product = await getProductBySlug(slug);
 
   if (product) {
@@ -193,7 +195,7 @@ export default async function Page({
           "@type": "ListItem",
           position: 1,
           name: "خانه",
-          item: "https://koohnegar.com/",
+          item: "https://pooladmotor.com/",
         },
         ...(firstCat
           ? [
@@ -201,7 +203,7 @@ export default async function Page({
                 "@type": "ListItem",
                 position: 2,
                 name: stringVal(firstCat.title),
-                item: `https://koohnegar.com/${firstCat.slug}`,
+                item: `https://pooladmotor.com/${firstCat.slug}`,
               },
             ]
           : []),
@@ -209,7 +211,7 @@ export default async function Page({
           "@type": "ListItem",
           position: firstCat ? 3 : 2,
           name: product.name,
-          item: `https://koohnegar.com/product/${product.slug}`,
+          item: `https://pooladmotor.com/${product.slug}`,
         },
       ],
     };
@@ -218,38 +220,6 @@ export default async function Page({
 
     const categoryIds = product.CategoriesOnProduct.map((c) => c.categoryId);
     const relatedProducts = await getRelatedProducts(categoryIds, product.id);
-
-    const featuresFromData =
-      Array.isArray(product.Feature) && product.Feature.length ? (
-        <aside className="w-full lg:w-[440px] flex flex-col relative">
-          <h2 className="font-bold text-lg text-gray-800 mb-5">ویژگی‌ها</h2>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {product.Feature.map((f) =>
-              f.FeatureValue.length === 0
-                ? null
-                : f.FeatureValue.map((fv) => (
-                    <div
-                      key={fv.id}
-                      className="bg-[#f5f6fa] rounded-xl px-4 py-3 flex flex-col justify-center min-h-[56px]"
-                    >
-                      <span className="text-xs text-[#999999] font-bold mb-2">
-                        {f.feature}
-                      </span>
-                      <span className="text-sm truncate">
-                        {fv.name}
-                        {fv.Length &&
-                          ` | طول: ${fv.Length.value}${fv.Length.unit}`}
-                        {fv.Width &&
-                          ` | عرض: ${fv.Width.value}${fv.Width.unit}`}
-                        {fv.Height &&
-                          ` | ارتفاع: ${fv.Height.value}${fv.Height.unit}`}
-                      </span>
-                    </div>
-                  ))
-            )}
-          </div>
-        </aside>
-      ) : null;
 
     return (
       <div className="min-h-screen flex flex-col bg-white">
@@ -320,7 +290,6 @@ export default async function Page({
                     <span>
                       کد کالا: <b>{product.code}</b>
                     </span>
-                    {featuresFromData}
                   </div>
                 </div>
               </div>
@@ -338,7 +307,6 @@ export default async function Page({
                       کد کالا: <b>{product.code}</b>
                     </span>
                   </div>
-                  {featuresFromData}
                 </div>
               </div>
               {/* سایدبار فروشنده و قیمت و دکمه (دسکتاپ) */}
@@ -407,6 +375,8 @@ export default async function Page({
               </aside>
             </div>
           </section>
+          <ProductFeatureTable features={product.Feature || []} />
+
           {product.description.text &&
             product.description.text.trim().length > 0 && (
               <section className="w-full max-w-7xl mx-auto bg-white rounded-2xl px-7 py-6 flex flex-col gap-8 ">

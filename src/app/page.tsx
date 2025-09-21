@@ -38,7 +38,7 @@ export default async function Home() {
         {/* محصولات ویژه */}
         {saleProducts.length > 0 && (
           <>
-            <SaleProductsSlider title="پیشنهاد ویژه" products={saleProducts} />
+            <SaleProductsSlider title="اسنوهاک" products={saleProducts} />
             <TriplePromoBanners />
           </>
         )}

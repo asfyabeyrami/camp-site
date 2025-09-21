@@ -4,21 +4,21 @@ const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 const BANNERS = [
   {
     id: 1,
-    title: "بنلی",
+    title: "اسنوهاک",
     image: `${NEXT_PUBLIC_BASE_URL}/media/52c4b247-c674-47cb-b2df-9d4edb4bfeb8.jpg`,
-    link: "/بنلی",
+    link: "/چادر-اسنوهاک",
   },
   {
     id: 2,
-    title: "باجاج",
+    title: "پکینیو",
     image: `${NEXT_PUBLIC_BASE_URL}/media/aa900901-be86-423c-af9b-37bcc715b38a.jpg`,
-    link: "/باجاج",
+    link: "/چادر-پکینیو",
   },
   {
     id: 3,
-    title: "گلکسی",
+    title: "جدیدترین ها",
     image: `${NEXT_PUBLIC_BASE_URL}/media/54023595-c41f-420f-8261-3210fde603a7.jpg`,
-    link: "/sym",
+    link: "/news",
   },
 ];
 
