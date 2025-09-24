@@ -196,7 +196,19 @@ export default function Footer() {
             </div>
             {/* نماد اعتماد */}
             <div className="flex gap-2 items-center mt-4">
-              {/* نماد اعتماد */}
+              <a
+                referrerPolicy="origin"
+                target="_blank"
+                rel="noreferrer"
+                href="https://trustseal.enamad.ir/?id=652299&Code=x3MAKQLhYpVXpaAMwnDcInuSeEzq7xM3"
+              >
+                <img
+                  referrerPolicy="origin"
+                  src="https://trustseal.enamad.ir/logo.aspx?id=652299&Code=x3MAKQLhYpVXpaAMwnDcInuSeEzq7xM3"
+                  alt="Enamad"
+                  style={{ cursor: "pointer" }}
+                />
+              </a>
               {/* می‌تونی سایر نمادها (ساماندهی، لوگوی شخصی و...) رو اضافه کنی */}
             </div>
           </div>
