@@ -197,17 +197,12 @@ export default function Footer() {
             {/* نماد اعتماد */}
             <div className="flex gap-2 items-center mt-4">
               <a
-                referrerPolicy="origin"
                 target="_blank"
                 href="https://trustseal.enamad.ir/?id=652299&Code=x3MAKQLhYpVXpaAMwnDcInuSeEzq7xM3"
               >
                 <img
-                  referrerPolicy="origin"
                   src="https://trustseal.enamad.ir/logo.aspx?id=652299&Code=x3MAKQLhYpVXpaAMwnDcInuSeEzq7xM3"
                   alt="نماد اعتماد الکترونیکی"
-                  width={88}
-                  height={44}
-                  className="h-11 object-contain"
                 />
               </a>
               {/* می‌تونی سایر نمادها (ساماندهی، لوگوی شخصی و...) رو اضافه کنی */}
